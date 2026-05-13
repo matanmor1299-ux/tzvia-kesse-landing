@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 
-// âââ Config âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Config ─────────────────────────────────────────────────────────────────
 const MAKE_WEBHOOK = "https://hook.eu1.make.com/mw6ltgrh6b6lw6bia167si7fmxa7m6ul";
 const PHONE = "0546402908";
-const WHATSAPP = `https://wa.me/972${PHONE.replace(/^0/, "")}?text=${encodeURIComponent("×©××× ×¦×××, ×¨×××ª× ××ª ×××ª×¨ ×©×× ×××©×× ××©×××¢ ×¢×× ð¸")}`;
+const WHATSAPP = `https://wa.me/972${PHONE.replace(/^0/, "")}?text=${encodeURIComponent("שלום צביה, ראיתי את האתר שלך ואשמח לשמוע עוד 🌸")}`;
 
-// âââ Global Styles âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Global Styles ───────────────────────────────────────────────────────────
 const GlobalStyles = () => (
   <style>{`
     @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
@@ -66,7 +66,7 @@ const GlobalStyles = () => (
   `}</style>
 );
 
-// âââ Scroll Reveal âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Scroll Reveal ───────────────────────────────────────────────────────────
 function useReveal() {
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -78,7 +78,7 @@ function useReveal() {
   }, []);
 }
 
-// âââ SVG Icons âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── SVG Icons ───────────────────────────────────────────────────────────────
 const IconHealing = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 3c0 0-3 3.5-3 6.5a3 3 0 0 0 6 0C15 6.5 12 3 12 3z"/>
@@ -144,7 +144,7 @@ const A11yIcon = () => (
   </svg>
 );
 
-// âââ Submit helper âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Submit helper ───────────────────────────────────────────────────────────
 async function submitToMake(data) {
   try {
     await fetch(MAKE_WEBHOOK, {
@@ -163,7 +163,7 @@ const fs = (extra = {}) => ({
 const ff = (e) => (e.target.style.borderColor = "#6B273D");
 const fb = (e) => (e.target.style.borderColor = "#E8C5D0");
 
-// âââ Inline Form ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Inline Form ─────────────────────────────────────────────────────────────
 function InlineForm() {
   const [form, setForm] = useState({ name:"", phone:"" });
   const [done, setDone] = useState(false);
@@ -175,27 +175,27 @@ function InlineForm() {
   };
   if (done) return (
     <div style={{ textAlign:"center", padding:"22px 16px", background:"rgba(107,39,61,.05)", borderRadius:"16px", border:"1.5px solid rgba(107,39,61,.13)" }}>
-      <div style={{ fontSize:"1.8rem", marginBottom:"5px" }}>ð¸</div>
-      <p style={{ color:"#6B273D", fontWeight:800, fontSize:"1rem" }}>×ª××× {form.name}!</p>
-      <p style={{ color:"#7A3F55", fontSize:".88rem", marginTop:"4px" }}>×××××¨ ××××× ×××§×× ×¢× ×× ×¤×ª×× ð</p>
+      <div style={{ fontSize:"1.8rem", marginBottom:"5px" }}>🌸</div>
+      <p style={{ color:"#6B273D", fontWeight:800, fontSize:"1rem" }}>תודה {form.name}!</p>
+      <p style={{ color:"#7A3F55", fontSize:".88rem", marginTop:"4px" }}>אחזור אלייך בהקדם עם לב פתוח 💛</p>
     </div>
   );
   return (
     <form onSubmit={send}>
-      <input style={fs()} type="text" placeholder="×©×" value={form.name} onChange={e=>setForm({...form,name:e.target.value})} onFocus={ff} onBlur={fb} required/>
-      <input style={fs()} type="tel" placeholder="×××¤××" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} onFocus={ff} onBlur={fb} required/>
+      <input style={fs()} type="text" placeholder="שם" value={form.name} onChange={e=>setForm({...form,name:e.target.value})} onFocus={ff} onBlur={fb} required/>
+      <input style={fs()} type="tel" placeholder="טלפון" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} onFocus={ff} onBlur={fb} required/>
       <button type="submit" disabled={loading} style={{
         width:"100%", padding:"14px", borderRadius:"12px",
         background:loading?"#B07090":"linear-gradient(135deg,#6B273D,#8B3A55)",
         color:"white", fontWeight:800, fontSize:".96rem", border:"none",
         cursor:loading?"not-allowed":"pointer",
         boxShadow:loading?"none":"0 4px 20px rgba(107,39,61,.28)", transition:"all .3s",
-      }}>{loading?"×©××××ª...":"××©×× ×©× ×©×××"}</button>
+      }}>{loading?"שולחת...":"אשמח שנשוחח"}</button>
     </form>
   );
 }
 
-// âââ Footer Form âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Footer Form ─────────────────────────────────────────────────────────────
 function FooterForm() {
   const [form, setForm] = useState({ name:"", phone:"", issue:"" });
   const [done, setDone] = useState(false);
@@ -208,18 +208,18 @@ function FooterForm() {
   };
   if (done) return (
     <div style={{ textAlign:"center", padding:"30px 16px" }}>
-      <div style={{ fontSize:"2.2rem", marginBottom:"8px" }}>ð¸</div>
-      <h3 style={{ color:"white", fontSize:"1.3rem", fontWeight:900, marginBottom:"5px" }}>{form.name}, ×§××××ª×!</h3>
-      <p style={{ color:"rgba(255,245,245,.8)", fontSize:".95rem", lineHeight:1.7 }}>×××××¨ ××××× ××§×¨×× ××ª×××× ×©×××ª ×××¨××ª.<br/>×××¨× ××©×× ×× ××ª×××× ×× ×©××× ×××ª ð</p>
+      <div style={{ fontSize:"2.2rem", marginBottom:"8px" }}>🌸</div>
+      <h3 style={{ color:"white", fontSize:"1.3rem", fontWeight:900, marginBottom:"5px" }}>{form.name}, קיבלתי!</h3>
+      <p style={{ color:"rgba(255,245,245,.8)", fontSize:".95rem", lineHeight:1.7 }}>אחזור אלייך בקרוב לתיאום שיחת הכרות.<br/>הדרך לשינוי מתחילה בנשימה אחת 💛</p>
     </div>
   );
   return (
     <form onSubmit={send} style={{ maxWidth:"440px", margin:"0 auto" }}>
-      <input style={df} type="text" placeholder="×©×" value={form.name} onChange={e=>setForm({...form,name:e.target.value})} required/>
-      <input style={df} type="tel" placeholder="×××¤××" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} required/>
+      <input style={df} type="text" placeholder="שם" value={form.name} onChange={e=>setForm({...form,name:e.target.value})} required/>
+      <input style={df} type="tel" placeholder="טלפון" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} required/>
       <select style={{ ...df, cursor:"pointer" }} value={form.issue} onChange={e=>setForm({...form,issue:e.target.value})}>
-        <option value="" disabled style={{ color:"#4A4A4A" }}>××× ×××× ××¢×××¨ ××?</option>
-        {["××¨×× ××××¥","×¢×¦× ××¢×××× ×¨××©××ª","××× ××¨×× ×","××¢×××ª ×©×× ×","×¦×××× ×××©××ª","××¢××¨× ××××","×××¨"].map(o=>(
+        <option value="" disabled style={{ color:"#4A4A4A" }}>במה אוכל לעזור לך?</option>
+        {["חרדה ולחץ","עצב ועיבוד רגשות","כאב כרוני","בעיות שינה","צמיחה אישית","מעברי חיים","אחר"].map(o=>(
           <option key={o} value={o} style={{ color:"#4A4A4A" }}>{o}</option>
         ))}
       </select>
@@ -229,12 +229,12 @@ function FooterForm() {
         color:loading?"white":"#6B273D", fontWeight:800, fontSize:"1rem",
         border:"none", cursor:loading?"not-allowed":"pointer",
         boxShadow:"0 4px 24px rgba(0,0,0,.14)", transition:"all .3s",
-      }}>{loading?"×©××××ª...":"×©××× ×× ×¤×¨×××"}</button>
+      }}>{loading?"שולחת...":"שלחי לי פרטים"}</button>
     </form>
   );
 }
 
-// âââ Cookie Popup ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Cookie Popup ────────────────────────────────────────────────────────────
 function CookiePopup({ onOpenModal }) {
   const [visible, setVisible] = useState(false);
   useEffect(() => { if (!localStorage.getItem("tz-cc")) setVisible(true); }, []);
@@ -244,26 +244,26 @@ function CookiePopup({ onOpenModal }) {
   return (
     <div className="cookie-overlay">
       <div className="cookie-box">
-        <button className="cookie-close" onClick={decline} aria-label="×¡×××¨">Ã</button>
-        <div style={{ fontSize:"1.6rem", marginBottom:"10px" }}>ðª</div>
-        <h3>×©××××© ××¢×××××ª</h3>
+        <button className="cookie-close" onClick={decline} aria-label="סגור">×</button>
+        <div style={{ fontSize:"1.6rem", marginBottom:"10px" }}>🍪</div>
+        <h3>שימוש בעוגיות</h3>
         <p>
-          ×××ª×¨ ××©×ª××© ××¢×××××ª ××¦××¨× ×ª×¤×¢×× ×ª×§×× ×©× ×××¤×¡×× ××©××¤××¨ ×××××ª ×××××©×.
-          ×××××¢ ×©× ××¡×¨ ×××¤×¡×× ××©××© ×× ××¨×§ ×××¦××¨×ª ×§×©×¨.{" "}
+          האתר משתמש בעוגיות לצורך תפעול תקין של הטפסים ושיפור חווית הגלישה.
+          המידע שנמסר בטפסים ישמש אך ורק ליצירת קשר.{" "}
           <span onClick={()=>{ decline(); onOpenModal("privacy"); }} style={{ color:"#6B273D", textDecoration:"underline", cursor:"pointer" }}>
-            ×××× ×××ª ×¤×¨××××ª
+            מדיניות פרטיות
           </span>
         </p>
         <div className="cookie-btns">
-          <button className="c-decline" onClick={decline}>×××××</button>
-          <button className="c-accept"  onClick={accept}>×§×××</button>
+          <button className="c-decline" onClick={decline}>דחייה</button>
+          <button className="c-accept"  onClick={accept}>קבלה</button>
         </div>
       </div>
     </div>
   );
 }
 
-// âââ Accessibility Widget âââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Accessibility Widget ─────────────────────────────────────────────────────
 function A11yWidget() {
   const [open, setOpen] = useState(false);
   const [hc, setHc]     = useState(false);
@@ -275,27 +275,27 @@ function A11yWidget() {
     <>
       {open && (
         <div className="a11y-panel">
-          <h4>××× × ×××©××ª</h4>
-          <div className="a11y-row"><span>× ×××××××ª ×××××</span>
-            <button className={`a11y-tgl ${hc?"on":""}`} onClick={()=>{ const n=!hc; setHc(n); tog("hc-mode",n); }}>{hc?"×¤×¢××":"××××"}</button>
+          <h4>כלי נגישות</h4>
+          <div className="a11y-row"><span>ניגודיות גבוהה</span>
+            <button className={`a11y-tgl ${hc?"on":""}`} onClick={()=>{ const n=!hc; setHc(n); tog("hc-mode",n); }}>{hc?"פעיל":"כבוי"}</button>
           </div>
-          <div className="a11y-row"><span>×××× ××§×¡×</span>
+          <div className="a11y-row"><span>גודל טקסט</span>
             <div style={{ display:"flex", gap:"4px" }}>
               {[["A",0,""],["A+",1,"big-text"],["A++",2,"bigger-txt"]].map(([l,v,cls])=>(
                 <button key={v} className={`a11y-tgl ${ts===v?"on":""}`} onClick={()=>{ setTs(v); document.body.classList.remove("big-text","bigger-txt"); if(cls) document.body.classList.add(cls); }}>{l}</button>
               ))}
             </div>
           </div>
-          <div className="a11y-row"><span>××××©×ª ×§××©××¨××</span>
-            <button className={`a11y-tgl ${ul?"on":""}`} onClick={()=>{ const n=!ul; setUl(n); tog("ul-links",n); }}>{ul?"×¤×¢××":"××××"}</button>
+          <div className="a11y-row"><span>הדגשת קישורים</span>
+            <button className={`a11y-tgl ${ul?"on":""}`} onClick={()=>{ const n=!ul; setUl(n); tog("ul-links",n); }}>{ul?"פעיל":"כבוי"}</button>
           </div>
-          <div className="a11y-row"><span>×¢×¦××¨ ×× ×××¦×××ª</span>
-            <button className={`a11y-tgl ${na?"on":""}`} onClick={()=>{ const n=!na; setNa(n); tog("no-anim",n); }}>{na?"×¤×¢××":"××××"}</button>
+          <div className="a11y-row"><span>עצור אנימציות</span>
+            <button className={`a11y-tgl ${na?"on":""}`} onClick={()=>{ const n=!na; setNa(n); tog("no-anim",n); }}>{na?"פעיל":"כבוי"}</button>
           </div>
         </div>
       )}
-      {/* Button sits in header â rendered from Header component using portal-like approach via prop */}
-      <button onClick={()=>setOpen(o=>!o)} id="a11y-trigger" aria-label="××× × ×××©××ª"
+      {/* Button sits in header — rendered from Header component using portal-like approach via prop */}
+      <button onClick={()=>setOpen(o=>!o)} id="a11y-trigger" aria-label="כלי נגישות"
         style={{ background:"none", border:"none", cursor:"pointer", color:"#6B273D", padding:"6px", display:"flex", alignItems:"center", borderRadius:"8px", transition:"background .2s" }}
         onMouseEnter={e=>(e.currentTarget.style.background="rgba(107,39,61,.08)")}
         onMouseLeave={e=>(e.currentTarget.style.background="none")}
@@ -306,82 +306,82 @@ function A11yWidget() {
   );
 }
 
-// âââ Legal content ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Legal content ────────────────────────────────────────────────────────────
 const PRIVACY_CONTENT = () => (
   <>
-    <h2>×××× ×××ª ×¤×¨××××ª</h2>
-    <p style={{ fontSize:".82rem", color:"#9A6070" }}>×¢×××× ×××¨××: ××× 2025</p>
-    <h3>×× ×××¡×£ ××ª ×××××¢?</h3>
-    <p>×¦××× ××¡×, ×××¤××ª ×××××¡×××ª, ××¨××××. × ××ª× ××¤× ××ª ××××¤×× {PHONE}.</p>
-    <h3>×××× ×¤×¨××× × ××¡×¤××?</h3>
-    <p>×©× ×××, ××¡×¤×¨ ×××¤××, ×××¤× ××××¨×ª× â × ××©× ××¤× ×××. ×××××¢ × ××¡×¨ ××¨×¦×× × ××××¤×©× ××¢×ª ××××× ×××¤×¡××.</p>
-    <h3>××××¢ × ××¡×£ ×××××¢?</h3>
-    <p>××¦××¨× ×××¨× ×××××, ×ª×××× ×©×××ª ×××¨××ª ×××ª× ×©××¨××ª ×××¤×××. ×× ×××¢×©× ×©××××© ×©××××§× ××× ××¡×××ª× ×××¤××¨×©×ª.</p>
-    <h3>××¢××¨× ××¦×××× ×©×××©×××</h3>
-    <p>×¤×¨××× ××× × × ×××¨×× ×××× × ×××¢××¨×× ××¦×××× ×©×××©×××, ×××¢× ×ª×©×ª××ª ×¢× × ×××××××ª ×× ××¨×©×ª ×××¤×¢××ª ×××ª×¨.</p>
-    <h3>×©×××¨×ª ×××××¢</h3>
-    <p>×××××¢ × ×©××¨ ×× ×¢×× ×§××× ×§×©×¨ ×××¤××× ×¤×¢××, ××¢× 7 ×©× ×× ××××¨ ×¡×××× ×××ª×× ×××¨××©××ª ×××§×××ª.</p>
-    <h3>×¢×××××ª (Cookies)</h3>
-    <p>×××ª×¨ ××©×ª××© ××¢×××××ª ××× ×××ª ××¦××¨× ×ª×¤×¢×× ×××¤×¡××. × ××ª× ××¡×¨× ××¢×××××ª, ×× ×××§ ×××¤×× ×§×¦×××ª ×¢×××××ª ×©×× ××¢×××.</p>
-    <h3>××××××ª××</h3>
-    <p>×××ª×× ××××§ ××× ×ª ××¤×¨××××ª, ××ª×©×"×-1981, ××© ×× ××××ª ××¢×××, ××ª×§× ××××§×© ××××§×ª ×××××¢ ××©×××¨ ×¢×××. ××¤× ×××: {PHONE}.</p>
+    <h2>מדיניות פרטיות</h2>
+    <p style={{ fontSize:".82rem", color:"#9A6070" }}>עדכון אחרון: מאי 2025</p>
+    <h3>מי אוסף את המידע?</h3>
+    <p>צביה כסה, מטפלת הוליסטית, כרמיאל. ניתן לפנות בטלפון {PHONE}.</p>
+    <h3>אילו פרטים נאספים?</h3>
+    <p>שם מלא, מספר טלפון, ולפי בחירתך — נושא הפנייה. המידע נמסר מרצונך החופשי בעת מילוי הטפסים.</p>
+    <h3>מדוע נאסף המידע?</h3>
+    <p>לצורך חזרה אלייך, תיאום שיחת הכרות ומתן שירות טיפולי. לא ייעשה שימוש שיווקי ללא הסכמתך המפורשת.</p>
+    <h3>העברה לצדדים שלישיים</h3>
+    <p>פרטיך אינם נמכרים ואינם מועברים לצדדים שלישיים, למעט תשתית ענן מאובטחת הנדרשת להפעלת האתר.</p>
+    <h3>שמירת המידע</h3>
+    <p>המידע נשמר כל עוד קיים קשר טיפולי פעיל, ועד 7 שנים לאחר סיומו בהתאם לדרישות חוקיות.</p>
+    <h3>עוגיות (Cookies)</h3>
+    <p>האתר משתמש בעוגיות טכניות לצורך תפעול הטפסים. ניתן לסרב לעוגיות, אך חלק מהפונקציות עלולות שלא לעבוד.</p>
+    <h3>זכויותיך</h3>
+    <p>בהתאם לחוק הגנת הפרטיות, התשמ"א-1981, יש לך זכות לעיין, לתקן ולבקש מחיקת המידע השמור עליך. לפנייה: {PHONE}.</p>
   </>
 );
 
 const TERMS_CONTENT = () => (
   <>
-    <h2>×ª× ×× ×©××××©</h2>
-    <p style={{ fontSize:".82rem", color:"#9A6070" }}>×¢×××× ×××¨××: ××× 2025</p>
-    <h3>××××</h3>
-    <p>××¨×××× ××××× ×××ª×¨ ×¦××× ××¡× â ×××¤××ª ×××××¡×××ª. ××©××××© ×××ª×¨ ××××× ××¡××× ××ª× ××× ×××××.</p>
-    <h3>××××¢ ×¨×¤×××</h3>
-    <p>××ª×× ×× ×××ª×¨ ××× × ××××¨××ª ××¡××¨× ××××. ××××¤×××× ××× × ×ª××××£ ××××¤×× ×¨×¤×××, ×××××, ×× ×××¢××¥ ××§×¦××¢×. ××× ××¦× ×××¨×× ××© ××¤× ××ª ××¨××¤×.</p>
-    <h3>×××××ª ×××¨×××ª</h3>
-    <p>××××¤××ª ××× × ×××¨×××ª ×× ××§ ×©×¢××× ×××××¨× ××ª××¦×× ×××¡×ª××××ª ×¢× ×ª×× × ×××ª×¨. ××©××××© ××©××¨××ª×× ××ª××¦×¢ ×¢× ×××¨×××ª ×××××¤× ××××.</p>
-    <h3>××××× ×¤×××©××ª</h3>
-    <p>××××× ××© ×××¦×¢ ××¤×××ª 24 ×©×¢××ª ××¨××©. ××××× ×××××¨ ×××ª×¨ ×¢×©×× ××××× ×××× ×××××.</p>
-    <h3>×§× ××× ×¨××× ×</h3>
-    <p>×× ×ª×× × ×××ª×¨ ×××× ×× ×××××××ª ×××¦×¨××. ××× ×××¢×ª××§ ×× ××¢×©××ª ×©××××© ××¡××¨× ××× ×××©××¨ ×××ª×.</p>
-    <h3>××¦××¨×ª ×§×©×¨</h3>
-    <p>××× ×©×××: {PHONE} | ×××××¡××¤.</p>
+    <h2>תנאי שימוש</h2>
+    <p style={{ fontSize:".82rem", color:"#9A6070" }}>עדכון אחרון: מאי 2025</p>
+    <h3>כללי</h3>
+    <p>ברוכים הבאים לאתר צביה כסה — מטפלת הוליסטית. השימוש באתר מהווה הסכמה לתנאים הבאים.</p>
+    <h3>מידע רפואי</h3>
+    <p>התכנים באתר הינם למטרות הסברה בלבד. הטיפולים אינם תחליף לטיפול רפואי, אבחון, או ייעוץ מקצועי. בכל מצב חירום יש לפנות לרופא.</p>
+    <h3>הגבלת אחריות</h3>
+    <p>המטפלת אינה אחראית לנזק שעלול להיגרם כתוצאה מהסתמכות על תכני האתר. השימוש בשירותים מתבצע על אחריות המטופל בלבד.</p>
+    <h3>ביטול פגישות</h3>
+    <p>ביטול יש לבצע לפחות 24 שעות מראש. ביטול מאוחר יותר עשוי לחייב בדמי ביטול.</p>
+    <h3>קניין רוחני</h3>
+    <p>כל תכני האתר מוגנים בזכויות יוצרים. אין להעתיק או לעשות שימוש מסחרי ללא אישור בכתב.</p>
+    <h3>יצירת קשר</h3>
+    <p>לכל שאלה: {PHONE} | וואטסאפ.</p>
   </>
 );
 
 const A11Y_CONTENT = () => (
   <>
-    <h2>××¦××¨×ª × ×××©××ª</h2>
-    <p style={{ fontSize:".82rem", color:"#9A6070" }}>×¢×××× ×××¨××: ××× 2025</p>
-    <h3>×××××××ª ×× ×××©××ª</h3>
-    <p>×¦××× ××¡× ××××××ª ××× ××©×ª ×××ª×¨ ×××ª×× ××××§ ×©××××× ××××××ª ××× ×©×× ×¢× ×××××××ª, ××ª×©× "×-1998 ××ª×§× ××ª ×× ×××©××ª ××©××¨××ª, ××ª×©×¢"×-2013.</p>
-    <h3>×¨××ª × ×××©××ª</h3>
-    <p>×××ª×¨ ×©×××£ ××¢××× ××ª×§× WCAG 2.1 ××¨×× AA ××ª×§× ××©×¨××× 5568. ×××ª×¨ ×××× ××¤×ª××¨ × ×××©××ª ××××ª×¨×ª ××××¤×©×¨ ×©×× ×× ×××× ××§×¡×, × ×××××××ª ×××××, ××××©×ª ×§××©××¨×× ××¢×¦××¨×ª ×× ×××¦×××ª.</p>
-    <h3>××××××ª ××××¢××ª</h3>
-    <p>×××§ ×××ª××× ××ª ××¨× ×§×××× ××§×¡× ××××¤× ×××. ×× × ×¢××××× ××ª××§×× ××.</p>
-    <h3>××××§× ×××¨×× ×</h3>
-    <p>××× 2025.</p>
-    <h3>×¤× ××× ×× ××©× × ×××©××ª</h3>
-    <p>× ×ª×§××ª ×××¢××? × ×©×× ××ª×§×. {PHONE} â × ××××¨ ×ª×× 5 ××× ×¢×¡×§××.</p>
+    <h2>הצהרת נגישות</h2>
+    <p style={{ fontSize:".82rem", color:"#9A6070" }}>עדכון אחרון: מאי 2025</p>
+    <h3>מחויבות לנגישות</h3>
+    <p>צביה כסה מחויבת להנגשת האתר בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ"ח-1998 ותקנות הנגישות לשירות, התשע"ג-2013.</p>
+    <h3>רמת נגישות</h3>
+    <p>האתר שואף לעמוד בתקן WCAG 2.1 ברמה AA ותקן ישראלי 5568. האתר כולל כפתור נגישות בכותרת המאפשר שינוי גודל טקסט, ניגודיות גבוהה, הדגשת קישורים ועצירת אנימציות.</p>
+    <h3>מגבלות ידועות</h3>
+    <p>חלק מהתמונות טרם קיבלו טקסט חלופי מלא. אנו עובדים לתיקון זה.</p>
+    <h3>בדיקה אחרונה</h3>
+    <p>מאי 2025.</p>
+    <h3>פנייה בנושא נגישות</h3>
+    <p>נתקלת בבעיה? נשמח לתקן. {PHONE} — נחזור תוך 5 ימי עסקים.</p>
   </>
 );
 
-// âââ Legal Modal ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Legal Modal ──────────────────────────────────────────────────────────────
 function LegalModal({ type, onClose }) {
   if (!type) return null;
   const Content = type==="privacy" ? PRIVACY_CONTENT : type==="terms" ? TERMS_CONTENT : A11Y_CONTENT;
   return (
     <div className="modal-overlay" onClick={e=>{ if(e.target===e.currentTarget) onClose(); }}>
       <div className="modal-box">
-        <button onClick={onClose} style={{ position:"sticky", top:0, float:"left", background:"none", border:"none", fontSize:"1.5rem", cursor:"pointer", color:"#6B273D", padding:"0 4px", lineHeight:1 }} aria-label="×¡×××¨">Ã</button>
+        <button onClick={onClose} style={{ position:"sticky", top:0, float:"left", background:"none", border:"none", fontSize:"1.5rem", cursor:"pointer", color:"#6B273D", padding:"0 4px", lineHeight:1 }} aria-label="סגור">×</button>
         <Content/>
         <div style={{ marginTop:"22px", textAlign:"center" }}>
-          <button onClick={onClose} style={{ padding:"10px 28px", borderRadius:"40px", background:"#6B273D", color:"white", fontWeight:700, fontSize:".88rem", border:"none", cursor:"pointer" }}>×¡×××¨×</button>
+          <button onClick={onClose} style={{ padding:"10px 28px", borderRadius:"40px", background:"#6B273D", color:"white", fontWeight:700, fontSize:".88rem", border:"none", cursor:"pointer" }}>סגירה</button>
         </div>
       </div>
     </div>
   );
 }
 
-// âââ Treatment Card âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Treatment Card ───────────────────────────────────────────────────────────
 function TCard({ icon, title, desc, delay=0 }) {
   return (
     <div className="fade-up glass card-hover" style={{ borderRadius:"18px", padding:"20px 18px", marginBottom:"12px", boxShadow:"0 4px 24px rgba(107,39,61,.06)", transitionDelay:`${delay}s` }}>
@@ -398,7 +398,7 @@ function TCard({ icon, title, desc, delay=0 }) {
   );
 }
 
-// âââ Main ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Main ──────────────────────────────────────────────────────────────────────
 export default function TzviaKesseLanding() {
   useReveal();
   const [scrolled, setScrolled] = useState(false);
@@ -412,35 +412,35 @@ export default function TzviaKesseLanding() {
   const closeModal = useCallback(() => setModal(null), []);
 
   const soul = [
-    { icon:<IconHealing/>, title:'××××× × "×××××¨ ×× ×©××"', desc:'×××¤×× ×××××× ×××¨×¤× ×××××× ××× ×¨××× ×¢××¦××ª××ª ×©× ×××¨××× ×××××× ×××××. ××× × ×¢×××¨ ××¨× ×××¨××¢× ×¢××¨, × ××× ××ª ××©××¢××¨ ×©×××, × ×¢×©× ×ª××§×× ×× ×¨××× ×× ×©××¨×¨ ×××©××¨×© ×××, ××¢×¡ ××¤××.' },
-    { icon:<IconEFT/>,     title:"×××¤×× EFT (×××¤×× ×)",   desc:"×××××, ××××× ×× ××§×× ×× ×¨××× ×××¨××××× ×× ××××¦×¢××ª ×ª×××× ×©× × ×§××©××ª ×¢××× ××ª, ××××¤×©×¨ ×©××¨××¨ ×¢×××§." },
-    { icon:<IconCards/>,   title:"×§××¤×× ×ª×××¢×ª×××",       desc:"×¢×××× ×¤× ××××ª ××§×××ª ××¡×¨×× ×××××§××, ×¤×ª×××ª ××¡××××ª ×××¨×××ª ×××××¢××ª." },
+    { icon:<IconHealing/>, title:'הילינג "חיבור לנשמה"', desc:'טיפול ייחודי ומרפא המלווה באנרגיה עוצמתית של הבריאה והמלאך מיכאל. יחד נעבור דרך אירועי עבר, נבין את השיעור שבהם, נעשה תיקון אנרגטי ונשחרר מהשורש כאב, כעס ופחד.' },
+    { icon:<IconEFT/>,     title:"טיפול EFT (טאפינג)",   desc:"אבחון, זיהוי וניקוי אנרגטי במרידיאנים באמצעות תהליך של נקישות עדינות, המאפשר שחרור עמוק." },
+    { icon:<IconCards/>,   title:"קלפים תודעתיים",       desc:"עבודה פנימית לקבלת מסרים מדויקים, פתיחת חסימות והרחבת המודעות." },
   ];
   const body = [
-    { icon:<IconSound/>,      title:"×¡××× × ××××× ×",           desc:"×¨××¦× ××ª××¨×× ××¨×¤××× ××××¦×¢××ª ×§×¢×¨××ª ×××××××ª, ×¤×¢××× × ××©×, ×§××× ×× ××¢××." },
-    { icon:<IconAccessBars/>, title:"××§×¡×¡ ×××¨×¡ (Access Bars)", desc:"×××¢ ×¢××× ×-32 × ×§××××ª ×¡×¤×¦××¤×××ª ××¨××©, ××× ×§× ××¡××× ×¢×××§×× ×××ª×ª-××××¢." },
-    { icon:<IconReiki/>,      title:"×¨×××§×",                   desc:"××××× ××¨×××× ×× ×¨××××× ××××¢ ×¢×××, ×××©××¨×¨ ××¡××× ×××§× ×¢× ××××× ×××¢×××ª ×¤×××××ª." },
+    { icon:<IconSound/>,      title:"סאונד הילינג",           desc:"רחצה בתדרים מרפאים באמצעות קערות טיבטיות, פעמוני גשם, קולנים ועוד." },
+    { icon:<IconAccessBars/>, title:"אקסס בארס (Access Bars)", desc:"מגע עדין ב-32 נקודות ספציפיות בראש, המנקה חסמים עמוקים מהתת-מודע." },
+    { icon:<IconReiki/>,      title:"רייקי",                   desc:"איזון מרכזים אנרגטיים במגע עדין, המשחרר חסמים ומקל על כאבים ובעיות פיזיות." },
   ];
 
   const trust = [
-    "××¨×× ×××¤××× ××¡×× ××××× ×××××××",
-    "×××¨×××ª ×× ×¨××××ª ×××× ××¤× × ×× ××¤××©",
-    "×× ×××¤×× ×××ª×× ×××©××ª ××¦×¨××××",
-    "× ××§×× ×××©× ××¤× × ×× ××¤××©",
-    "90 ××§××ª ×©× × ×××××ª ×××× ×¨×§ ××©××××",
-    "××××©××ª ××ª×××× ×¤×××©××ª â ×× ×¢×¨×",
+    "מרחב טיפולי חסוי ובטוח לחלוטין",
+    "אחריות אנרגטית מלאה לפני כל מפגש",
+    "כל טיפול מותאם אישית לצרכייך",
+    "ניקוי אישי לפני כל מפגש",
+    "90 דקות של נוכחות מלאה רק בשבילך",
+    "גמישות בתיאום פגישות — גם ערב",
   ];
 
   return (
     <div style={{ fontFamily:"'Heebo',sans-serif", direction:"rtl", background:"#FFF5F5", overflowX:"hidden" }}>
       <GlobalStyles/>
       <div style={{ position:"absolute",width:"1px",height:"1px",overflow:"hidden",opacity:0,pointerEvents:"none" }} aria-hidden="true">
-        ×××¤××ª ×××××¡×××ª ×××¨×××× | ××××× × ××¨×××× | EFT ××¨×××× | ×¨×××§× ×¦×¤×× | ××§×¡×¡ ×××¨×¡ ×××× | ×§××¤× ×ª×××¢× ××¨×××× | ×¦××× ××¡×
+        מטפלת הוליסטית בכרמיאל | הילינג כרמיאל | EFT כרמיאל | רייקי צפון | אקסס בארס גליל | קלפי תודעה כרמיאל | צביה כסה
       </div>
 
       <LegalModal type={modal} onClose={closeModal}/>
 
-      {/* ââ HEADER âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── HEADER ───────────────────────────────────────────────────────── */}
       <header style={{
         position:"fixed", top:0, right:0, left:0, zIndex:1000, height:"64px", padding:"0 20px",
         display:"flex", alignItems:"center", justifyContent:"space-between",
@@ -451,11 +451,11 @@ export default function TzviaKesseLanding() {
         transition:"all .4s ease",
       }}>
         <div style={{ lineHeight:1.2 }}>
-          <div style={{ fontWeight:900, fontSize:"1.15rem", color:"#6B273D" }}>×¦××× ××¡×</div>
-          <div style={{ fontWeight:400, fontSize:".7rem", color:"#9A6070", letterSpacing:".4px" }}>×××¤××ª ×××××¡×××ª</div>
+          <div style={{ fontWeight:900, fontSize:"1.15rem", color:"#6B273D" }}>צביה כסה</div>
+          <div style={{ fontWeight:400, fontSize:".7rem", color:"#9A6070", letterSpacing:".4px" }}>מטפלת הוליסטית</div>
         </div>
         <div style={{ display:"flex", alignItems:"center", gap:"8px" }}>
-          {/* A11y button sits here â non-intrusive in header */}
+          {/* A11y button sits here — non-intrusive in header */}
           <A11yWidget/>
           <a href={`tel:${PHONE}`} style={{
             display:"flex", alignItems:"center", gap:"7px", color:"#6B273D",
@@ -464,12 +464,12 @@ export default function TzviaKesseLanding() {
           }}>
             <PhoneIcon/>
             <span className="hide-mob">{PHONE}</span>
-            <span className="hide-desk">××ª×§×©×¨×</span>
+            <span className="hide-desk">התקשרי</span>
           </a>
         </div>
       </header>
 
-      {/* ââ HERO âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section style={{
         minHeight:"100vh", display:"flex", alignItems:"center", justifyContent:"center",
         padding:"96px 24px 56px", position:"relative", overflow:"hidden",
@@ -480,85 +480,85 @@ export default function TzviaKesseLanding() {
 
         <div style={{ maxWidth:"700px", width:"100%", textAlign:"center", position:"relative" }}>
           <h1 className="fade-up" style={{ fontSize:"clamp(2rem,5vw,3.3rem)", fontWeight:900, color:"#6B273D", lineHeight:1.28, letterSpacing:"-.5px", marginBottom:"16px" }}>
-            ×× ×©×× ××××©: ××¡×¢ ×©× ×¨××¤××, ×©×§× ××××××¨ ×¤× ×××.
+            לנשום מחדש: מסע של ריפוי, שקט וחיבור פנימי.
           </h1>
           <p className="fade-up" style={{ fontSize:"clamp(1.05rem,2.5vw,1.2rem)", color:"#7A3F55", lineHeight:1.8, marginBottom:"32px" }}>
-            ××¨×× ×××××¡×× ×××©×× ×¢×××§ ×¨××× × ××××× ×ª×××¢×ª×××,<br/>
-            ××× ××¢×××¨ ×× ×××©×ª××¨×¨ ×××¢×××¡ ××××××¨ ×× ××¢××¦×× ×©××.
+            מרחב הוליסטי המשלב עומק רוחני וכלים תודעתיים,<br/>
+            כדי לעזור לך להשתחרר מהעומס ולחזור אל העוצמה שבך.
           </p>
           <div className="fade-up" style={{ display:"flex", gap:"12px", justifyContent:"center", flexWrap:"wrap", marginBottom:"22px" }}>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
               style={{ display:"inline-flex", alignItems:"center", gap:"8px", background:"#25D366", color:"white", padding:"14px 26px", borderRadius:"40px", fontWeight:800, fontSize:"1rem", textDecoration:"none", boxShadow:"0 6px 28px rgba(37,211,102,.36)", transition:"transform .2s" }}
               onMouseEnter={e=>e.currentTarget.style.transform="translateY(-2px)"}
               onMouseLeave={e=>e.currentTarget.style.transform="none"}
-            ><WaIcon/> ×©××× ×× ××××¢×</a>
+            ><WaIcon/> שלחי לי הודעה</a>
             <a href="#contact"
               style={{ display:"inline-flex", alignItems:"center", gap:"8px", background:"white", color:"#6B273D", padding:"14px 26px", borderRadius:"40px", fontWeight:700, fontSize:"1rem", textDecoration:"none", border:"1.5px solid rgba(107,39,61,.18)", boxShadow:"0 4px 20px rgba(107,39,61,.09)", transition:"transform .2s" }}
               onMouseEnter={e=>e.currentTarget.style.transform="translateY(-2px)"}
               onMouseLeave={e=>e.currentTarget.style.transform="none"}
-            >×§××¢× ×¤×××©× ×¨××©×× ×</a>
+            >קבעי פגישה ראשונה</a>
           </div>
           <div className="fade-up" style={{ display:"inline-flex", alignItems:"center", gap:"6px", background:"rgba(107,39,61,.07)", border:"1px solid rgba(107,39,61,.13)", borderRadius:"40px", padding:"6px 16px" }}>
-            <span style={{ fontSize:".85rem", color:"#6B273D", fontWeight:600 }}>×××¤××ª ×××××¡×××ª ×××¨×××× ××××××¨ ×××××</span>
+            <span style={{ fontSize:".85rem", color:"#6B273D", fontWeight:600 }}>מטפלת הוליסטית בכרמיאל ואיזור הגליל</span>
           </div>
         </div>
       </section>
 
-      {/* ââ EMPATHY ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── EMPATHY ──────────────────────────────────────────────────────── */}
       <section style={{ padding:"80px 24px", background:"linear-gradient(180deg,#FDF2F8,#FFF5F5)" }}>
-        <div style={{ maxWidth:"960px", margin:"0 auto", display:"grid", gridTemplateColumns: "1fr 1fr", gap:"52px", alignItems:"start" }} className="two-col">
+        <div style={{ maxWidth:"960px", margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:"52px", alignItems:"start" }} className="two-col">
           <div className="slide-r">
             <h2 style={{ fontSize:"clamp(1.6rem,3vw,2.2rem)", fontWeight:900, color:"#6B273D", lineHeight:1.3, marginBottom:"20px" }}>
-              ××§×©×× ×¢×××§× ××¨×¢×©× ××¨×§×¢
+              הקשבה עמוקה לרעשי הרקע
             </h2>
             <p style={{ color:"#4A4A4A", fontSize:"1rem", lineHeight:1.88, marginBottom:"14px" }}>
-              ××¤×¢×××, ××¨××¥ ××××× ×× ×©×× ×××× ×××¨××× ×××× ××©×××¨×× ×××ª× × ×¢× ×ª×××©× ×©× × ×ª×§. ×××¡×¨ ×©×× ×, ×¢×××¡, ×ª×¡×××, ×¢×××¤××ª ×©×©××××ª ××ª ××× ×¨×××, ×¤××××, ××¢×¡××, ××¨×××ª, ×× ×ª×××©× ×©× ×ª×§××¢××ª ××××©×× ×××××£ ××¤×××.
+              לפעמים, מרוץ החיים או שינויים הורמונליים משאירים אותנו עם תחושה של נתק. חוסר שינה, עומס, תסכול, עייפות ששואבת את האנרגיה, פחדים, כעסים, חרדות, או תחושה של תקיעות בהגשמה ובגוף הפיזי.
             </p>
             <p style={{ color:"#4A4A4A", fontSize:"1rem", lineHeight:1.88, marginBottom:"14px" }}>
-              ××ª ×× ×××××ª ××××©×× ××©××ª ××ª ××× ×××. ××××¦×¢××ª ×ª×××× ×©× ××××× ×××§×©×× ×¢×××§× ××××£ ××× ×¤×©, × ××¦××¨ ××× ×××××¨ ××××© ××§×× ××¤× ××× ×©××. ××× ×ª×××× ×©××¡×××¢ ×× ×××¤×××ª ××ª ××ª×¡××× ×× ××¤××××× ×××¨××©×××, ××××××¨ ××©××¨× ×¨×××¢×, ××××× ×ª ××©×××.
+              את לא חייבת להמשיך לשאת את הכל לבד. באמצעות תהליך של אבחון והקשבה עמוקה לגוף ולנפש, ניצור יחד חיבור מחדש לקול הפנימי שלך. זהו תהליך שיסייע לך להפחית את התסמינים הפיזיים והרגשיים, ולחזור לשגרה רגועה, מאוזנת ושמחה.
             </p>
             <p style={{ color:"#6B273D", fontSize:"1rem", lineHeight:1.88, fontWeight:700 }}>
-              ×× ××ª ××¨×××©× ×©××××¢ ×××× ×××¦×× ××ª ××©×§× ×©×× ××××©, ×× × ××× ××©××××.
+              אם את מרגישה שהגיע הזמן למצוא את השקט שלך מחדש, אני כאן בשבילך.
             </p>
           </div>
           <div className="slide-l">
             <div className="glass" style={{ padding:"30px", borderRadius:"22px", boxShadow:"0 12px 48px rgba(107,39,61,.1)" }}>
-              <h3 style={{ fontSize:"1.2rem", fontWeight:800, color:"#6B273D", marginBottom:"4px" }}>××©×××¨× ×¤×¨××× â ×××××¨ ×××××</h3>
-              <p style={{ color:"#7A3F55", fontSize:".86rem", marginBottom:"20px", lineHeight:1.6 }}>×©××× ×§×¦×¨× ××× ××ª××××××ª, ××× ××××× ×× ××ª ×¦×¨××× ×××× ×× × ××××× ××¢×××¨.</p>
+              <h3 style={{ fontSize:"1.2rem", fontWeight:800, color:"#6B273D", marginBottom:"4px" }}>השאירי פרטים — אחזור אלייך</h3>
+              <p style={{ color:"#7A3F55", fontSize:".86rem", marginBottom:"20px", lineHeight:1.6 }}>שיחה קצרה ללא התחייבות, כדי להבין מה את צריכה ואיך אני יכולה לעזור.</p>
               <InlineForm/>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ââ TREATMENTS âââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── TREATMENTS ───────────────────────────────────────────────────── */}
       <section style={{ padding:"80px 24px", background:"#FFF5F5" }}>
         <div style={{ maxWidth:"1060px", margin:"0 auto" }}>
           <div className="fade-up" style={{ textAlign:"center", marginBottom:"28px" }}>
             <h2 style={{ fontSize:"clamp(1.7rem,3.5vw,2.6rem)", fontWeight:900, color:"#6B273D", lineHeight:1.25, marginBottom:"12px" }}>
-              ×××× × ×××¡×¢ ×¨××¤××: ×× ×§××¨× ××××¤××?
+              הזמנה למסע ריפוי: מה קורה בטיפול?
             </h2>
             <p style={{ color:"#5A5A5A", fontSize:"1rem", lineHeight:1.8, maxWidth:"640px", margin:"0 auto 6px" }}>
-              ××§××× ××§× ××©×§×× ×©×× ×××¨×××× (×× ××× ××××ª ×©× ×××ª× ××××), ××¦×¨×ª× ×¢×××¨× ××¡×¢ ×× 6 ××¤××©××. ××× ××× ×©××× ×¨×§ ×©×× â <strong>90 ××§××ª ×©× × ×××××ª ××××.</strong> ××××¨× ×©×× × ××× ×××ª: ×××¤×©×¨ ××××£ ××××¨××¢, ×× ×¤×© ×× ×©×× ×××ª×××¢× ×××ª×¨××.
+              בקליניקה השקטה שלי בכרמיאל (או מהנוחות של ביתך בזום), יצרתי עבורך מסע בן 6 מפגשים. זהו זמן שהוא רק שלך – <strong>90 דקות של נוכחות מלאה.</strong> המטרה שלנו היא אחת: לאפשר לגוף להירגע, לנפש לנשום ולתודעה להתרחב.
             </p>
             <p style={{ color:"#7A3F55", fontSize:".95rem", marginTop:"8px" }}>
-              ××× ××ª×ª ×× ××ª ×××¢× × ××××××§ ××××ª×¨, ×× × ××©×××ª ×¢×××× ××©×××©× ×¨××××:
+              כדי לתת לך את המענה המדויק ביותר, אני משלבת עבודה בשלושה רבדים:
             </p>
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"28px" }} className="two-col">
             <div>
-              <p style={{ fontWeight:800, fontSize:".88rem", color:"#6B273D", marginBottom:"12px", paddingBottom:"8px", borderBottom:"1.5px solid rgba(107,39,61,.1)" }}>×× ×¤×© ×××ª×××¢×:</p>
+              <p style={{ fontWeight:800, fontSize:".88rem", color:"#6B273D", marginBottom:"12px", paddingBottom:"8px", borderBottom:"1.5px solid rgba(107,39,61,.1)" }}>לנפש ולתודעה:</p>
               {soul.map((t,i)=><TCard key={i} {...t} delay={i*.07}/>)}
             </div>
             <div>
-              <p style={{ fontWeight:800, fontSize:".88rem", color:"#6B273D", marginBottom:"12px", paddingBottom:"8px", borderBottom:"1.5px solid rgba(107,39,61,.1)" }}>××××£:</p>
+              <p style={{ fontWeight:800, fontSize:".88rem", color:"#6B273D", marginBottom:"12px", paddingBottom:"8px", borderBottom:"1.5px solid rgba(107,39,61,.1)" }}>לגוף:</p>
               {body.map((t,i)=><TCard key={i} {...t} delay={i*.07}/>)}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ââ BONUS ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── BONUS ────────────────────────────────────────────────────────── */}
       <section style={{ padding:"60px 24px", background:"linear-gradient(180deg,#FDF2F8,#FFF5F5)" }}>
         <div style={{ maxWidth:"760px", margin:"0 auto" }}>
           <div className="scale-up" style={{
@@ -569,14 +569,14 @@ export default function TzviaKesseLanding() {
             <div style={{ position:"absolute", top:"-50px", right:"-50px", width:"220px", height:"220px", borderRadius:"50%", background:"rgba(255,255,255,.05)" }}/>
             <div style={{ position:"relative" }}>
               <div style={{ display:"inline-block", background:"rgba(255,255,255,.13)", borderRadius:"40px", padding:"5px 16px", marginBottom:"16px" }}>
-                <span style={{ color:"rgba(255,245,245,.9)", fontSize:".8rem", fontWeight:700 }}>××ª× × ×××¦××¨×¤××ª ×××¡×¢</span>
+                <span style={{ color:"rgba(255,245,245,.9)", fontSize:".8rem", fontWeight:700 }}>מתנה למצטרפות למסע</span>
               </div>
               <h2 style={{ color:"white", fontSize:"clamp(1.35rem,3vw,2rem)", fontWeight:900, lineHeight:1.3, marginBottom:"14px" }}>
-                ××ª× × ××××××ª ×××××
+                מתנה מיוחדת באהבה
               </h2>
               <p style={{ color:"rgba(255,245,245,.85)", fontSize:"1.02rem", lineHeight:1.8, marginBottom:"26px", maxWidth:"500px", margin:"0 auto 26px" }}>
-                ××× ××ª××× ××ª×××× ×©××, ×ª×§××× ××× × ××× ××¡ ××××× ×××××:<br/>
-                <strong style={{ color:"white" }}>×¤×¨××¡×ª ×§××¤× "××¤×¨× ×©×××" ××©×××× ×××¤×× EFT ××××§×</strong> â ×××¢× ×§×ª ××××¨××ª ××××××ª, ×¤×ª×××ª ××¡××××ª ×××××§ ×¤× ××× ××××©× ×××¨×.
+                כדי לתמוך בתהליך שלך, תקבלי ממני בונוס מיוחד באהבה:<br/>
+                <strong style={{ color:"white" }}>פריסת קלפי "הפרח שבאך" בשילוב טיפול EFT ממוקד</strong> – להענקת בהירות מיידית, פתיחת חסימות ודיוק פנימי להמשך הדרך.
               </p>
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" style={{
                 display:"inline-flex", alignItems:"center", gap:"8px",
@@ -586,21 +586,21 @@ export default function TzviaKesseLanding() {
               }}
                 onMouseEnter={e=>e.currentTarget.style.transform="translateY(-2px) scale(1.02)"}
                 onMouseLeave={e=>e.currentTarget.style.transform="none"}
-              ><WaIcon/> ×¨××¦× ××§×× ××ª ×××ª× × ð¸</a>
+              ><WaIcon/> רוצה לקבל את המתנה 🌸</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ââ TRUST ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── TRUST ────────────────────────────────────────────────────────── */}
       <section style={{ padding:"80px 24px", background:"#FFF5F5" }}>
         <div style={{ maxWidth:"860px", margin:"0 auto" }}>
           <div className="fade-up" style={{ textAlign:"center", marginBottom:"36px" }}>
             <h2 style={{ fontSize:"clamp(1.7rem,3.5vw,2.4rem)", fontWeight:900, color:"#6B273D", lineHeight:1.25, marginBottom:"12px" }}>
-              ××ª××××××ª ×××¨×× × ×§×
+              התחייבות למרחב נקי
             </h2>
             <p style={{ color:"#5A5A5A", fontSize:"1rem", lineHeight:1.85, maxWidth:"600px", margin:"0 auto" }}>
-              ×× × ××××× × ×©××× ×©×ª×××× ×××ª× ×§××ª, ×× ×××¨×× ×¡×××× ×××× ×××××ª ××××¨. ×××, ×× × ××§×¤××× ×¢× ×××¨×××ª ×× ×¨××××ª ×××× ×× ××§×× ×××©× ××¤× × ×× ××¤××©, ××× ×××××× ×©××ª ××§×××ª ××ª ×ª×©×××ª ××× ×××× ×¨××× ××××××§×ª ××.
+              אני מאמינה שכדי שתוכלי להתנקות, גם המרחב סביבך חייב להיות טהור. לכן, אני מקפידה על אחריות אנרגטית מלאה וניקוי אישי לפני כל מפגש, כדי להבטיח שאת מקבלת את תשומת הלב והאנרגיה המדויקת לך.
             </p>
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"10px" }} className="two-col">
@@ -614,39 +614,39 @@ export default function TzviaKesseLanding() {
         </div>
       </section>
 
-      {/* ââ FOOTER CTA âââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── FOOTER CTA ───────────────────────────────────────────────────── */}
       <section id="contact" style={{ padding:"96px 24px", background:"linear-gradient(135deg,#6B273D,#7A3046,#5C1E33)", position:"relative", overflow:"hidden" }}>
         <div style={{ position:"absolute", top:"-80px", left:"50%", transform:"translateX(-50%)", width:"560px", height:"560px", borderRadius:"50%", background:"radial-gradient(circle,rgba(255,255,255,.04),transparent 70%)" }}/>
         <div style={{ maxWidth:"580px", margin:"0 auto", position:"relative", textAlign:"center" }}>
           <div className="fade-up">
-            <div style={{ fontSize:"2.4rem", marginBottom:"12px" }}>ð¸</div>
+            <div style={{ fontSize:"2.4rem", marginBottom:"12px" }}>🌸</div>
             <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.6rem)", fontWeight:900, color:"white", lineHeight:1.25, marginBottom:"12px" }}>
-              ×××¡×¢ ×©×× ××ª××× ×× ×©××× ×××ª
+              המסע של ראמצמך בנשימה אחת
             </h2>
             <p style={{ color:"rgba(255,245,245,.78)", fontSize:"1rem", lineHeight:1.8, marginBottom:"34px" }}>
-              ×× ××ª ××¨×××©× ×©××××¢ ×××× ×××¢× ××§ ××¢×¦×× ××ª ××©×§× ×××, ×× × ××××× × ×××ª× ×××©×××¨ ×¤×¨××× ×× ×¦× ×××¨× ××©×××ª ×××¨××ª ×§×¦×¨×.
+              אם את מרגישה שהגיע הזמן להעניק לעצמך את השקט הזה, אני מזמינה אותך להשאיר פרטים ונצא לדרך בשיחת הכרות קצרה.
             </p>
           </div>
           <div className="fade-up"><FooterForm/></div>
           <div className="fade-up" style={{ marginTop:"22px" }}>
-            <p style={{ color:"rgba(255,245,245,.5)", fontSize:".83rem", marginBottom:"9px" }}>×× ×¤×©×× ×©××× ××××¢× ××©××¨×:</p>
+            <p style={{ color:"rgba(255,245,245,.5)", fontSize:".83rem", marginBottom:"9px" }}>או פשוט שלחי הודעה ישירה:</p>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" style={{
               display:"inline-flex", alignItems:"center", gap:"7px",
               color:"#25D366", textDecoration:"none", fontWeight:700, fontSize:".9rem",
               background:"rgba(37,211,102,.1)", padding:"8px 16px", borderRadius:"40px",
               border:"1px solid rgba(37,211,102,.22)",
-            }}><WaIcon/> WhatsApp ××©××¨</a>
+            }}><WaIcon/> WhatsApp ישיר</a>
           </div>
         </div>
       </section>
 
-      {/* ââ SITE FOOTER ââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── SITE FOOTER ──────────────────────────────────────────────────── */}
       <footer style={{ background:"#3D1020", padding:"26px 24px", textAlign:"center" }}>
         <p style={{ color:"rgba(255,245,245,.4)", fontSize:".78rem", marginBottom:"10px" }}>
-          Â© 2025 ×¦××× ××¡× â ×××¤××ª ×××××¡×××ª | ××¨×××× ××××××¨ ××××× | ×× ×××××××ª ×©×××¨××ª
+          © 2025 צביה כסה — מטפלת הוליסטית | כרמיאל ואיזור הגליל | כל הזכויות שמורות
         </p>
         <div style={{ display:"flex", gap:"16px", justifyContent:"center", flexWrap:"wrap" }}>
-          {[["×××× ×××ª ×¤×¨××××ª","privacy"],["×ª× ×× ×©××××©","terms"],["××¦××¨×ª × ×××©××ª","a11y"]].map(([lbl,k])=>(
+          {[["מדיניות פרטיות","privacy"],["תנאי שימוש","terms"],["הצהרת נגישות","a11y"]].map(([lbl,k])=>(
             <button key={k} onClick={()=>openModal(k)} style={{
               background:"none", border:"none", cursor:"pointer", color:"rgba(255,245,245,.35)",
               fontSize:".76rem", textDecoration:"underline", fontFamily:"'Heebo',sans-serif", padding:0, transition:"color .2s",
@@ -658,10 +658,10 @@ export default function TzviaKesseLanding() {
         </div>
       </footer>
 
-      {/* ââ WHATSAPP FLOAT (mobile) âââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── WHATSAPP FLOAT (mobile) ───────────────────────────────────────── */}
       <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
         className="wa-pulse hide-desk"
-        aria-label="×©××× ××××¢× ××××××¡××¤"
+        aria-label="שלחי הודעה בוואטסאפ"
         style={{
           position:"fixed", bottom:"24px", left:"24px", zIndex:999,
           width:"52px", height:"52px", borderRadius:"50%",
@@ -670,7 +670,7 @@ export default function TzviaKesseLanding() {
         }}
       ><WaIcon/></a>
 
-      {/* ââ COOKIE POPUP ââââââââââââââââââââââââââââââââââââââââââââââââââ */}
+      {/* ── COOKIE POPUP ─────────────────────────────────────────────────── */}
       <CookiePopup onOpenModal={openModal}/>
     </div>
   );
