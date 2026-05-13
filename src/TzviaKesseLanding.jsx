@@ -506,7 +506,7 @@ export default function TzviaKesseLanding() {
 
       {/* ââ EMPATHY ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
       <section style={{ padding:"80px 24px", background:"linear-gradient(180deg,#FDF2F8,#FFF5F5)" }}>
-        <div style={{ maxWidth:"960px", margin:"0 auto", display:"grid", gridTemplateColumns: 1fr 1fr", gap:"52px", alignItems:"start" }} className="two-col">
+        <div style={{ maxWidth:"960px", margin:"0 auto", display:"grid", gridTemplateColumns: "1fr 1fr", gap:"52px", alignItems:"start" }} className="two-col">
           <div className="slide-r">
             <h2 style={{ fontSize:"clamp(1.6rem,3vw,2.2rem)", fontWeight:900, color:"#6B273D", lineHeight:1.3, marginBottom:"20px" }}>
               ××§×©×× ×¢×××§× ××¨×¢×©× ××¨×§×¢
