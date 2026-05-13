@@ -621,7 +621,7 @@ export default function TzviaKesseLanding() {
           <div className="fade-up">
             <div style={{ fontSize:"2.4rem", marginBottom:"12px" }}>🌸</div>
             <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.6rem)", fontWeight:900, color:"white", lineHeight:1.25, marginBottom:"12px" }}>
-              המסע של ראמצמך בנשימה אחת
+              המסע שלך מתחיל בנשימה אחת
             </h2>
             <p style={{ color:"rgba(255,245,245,.78)", fontSize:"1rem", lineHeight:1.8, marginBottom:"34px" }}>
               אם את מרגישה שהגיע הזמן להעניק לעצמך את השקט הזה, אני מזמינה אותך להשאיר פרטים ונצא לדרך בשיחת הכרות קצרה.
