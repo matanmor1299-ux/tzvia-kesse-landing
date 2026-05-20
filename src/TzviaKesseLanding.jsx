@@ -294,7 +294,7 @@ function A11yWidget() {
           </div>
         </div>
       )}
-      {/* Button sits in header — rendered from Header component using portal-like approach via prop */}
+      {/* Button sits in header, rendered from Header component using portal-like approach via prop */}
       <button onClick={()=>setOpen(o=>!o)} id="a11y-trigger" aria-label="כלי נגישות"
         style={{ background:"none", border:"none", cursor:"pointer", color:"#6B273D", padding:"6px", display:"flex", alignItems:"center", borderRadius:"8px", transition:"background .2s" }}
         onMouseEnter={e=>(e.currentTarget.style.background="rgba(107,39,61,.08)")}
@@ -314,7 +314,7 @@ const PRIVACY_CONTENT = () => (
     <h3>מי אוסף את המידע?</h3>
     <p>צביה כסה, מטפלת הוליסטית, כרמיאל. ניתן לפנות בטלפון {PHONE}.</p>
     <h3>אילו פרטים נאספים?</h3>
-    <p>שם מלא, מספר טלפון, ולפי בחירתך — נושא הפנייה. המידע נמסר מרצונך החופשי בעת מילוי הטפסים.</p>
+    <p>שם מלא, מספר טלפון, ולפי בחירתך, נושא הפנייה. המידע נמסר מרצונך החופשי בעת מילוי הטפסים.</p>
     <h3>מדוע נאסף המידע?</h3>
     <p>לצורך חזרה אלייך, תיאום שיחת הכרות ומתן שירות טיפולי. לא ייעשה שימוש שיווקי ללא הסכמתך המפורשת.</p>
     <h3>העברה לצדדים שלישיים</h3>
@@ -324,7 +324,7 @@ const PRIVACY_CONTENT = () => (
     <h3>עוגיות (Cookies)</h3>
     <p>האתר משתמש בעוגיות טכניות לצורך תפעול הטפסים. ניתן לסרב לעוגיות, אך חלק מהפונקציות עלולות שלא לעבוד.</p>
     <h3>זכויותיך</h3>
-    <p>בהתאם לחוק הגנת הפרטיות, התשמ"א-1981, יש לך זכות לעיין, לתקן ולבקש מחיקת המידע השמור עליך. לפנייה: {PHONE}.</p>
+    <p>בהתאם לחוק הגנת הפרטיות התשמ"א 1981, יש לך זכות לעיין, לתקן ולבקש מחיקת המידע השמור עליך. לפנייה: {PHONE}.</p>
   </>
 );
 
@@ -333,7 +333,7 @@ const TERMS_CONTENT = () => (
     <h2>תנאי שימוש</h2>
     <p style={{ fontSize:".82rem", color:"#9A6070" }}>עדכון אחרון: מאי 2025</p>
     <h3>כללי</h3>
-    <p>ברוכים הבאים לאתר צביה כסה — מטפלת הוליסטית. השימוש באתר מהווה הסכמה לתנאים הבאים.</p>
+    <p>ברוכים הבאים לאתר צביה כסה, מטפלת הוליסטית. השימוש באתר מהווה הסכמה לתנאים הבאים.</p>
     <h3>מידע רפואי</h3>
     <p>התכנים באתר הינם למטרות הסברה בלבד. הטיפולים אינם תחליף לטיפול רפואי, אבחון, או ייעוץ מקצועי. בכל מצב חירום יש לפנות לרופא.</p>
     <h3>הגבלת אחריות</h3>
@@ -352,7 +352,7 @@ const A11Y_CONTENT = () => (
     <h2>הצהרת נגישות</h2>
     <p style={{ fontSize:".82rem", color:"#9A6070" }}>עדכון אחרון: מאי 2025</p>
     <h3>מחויבות לנגישות</h3>
-    <p>צביה כסה מחויבת להנגשת האתר בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ"ח-1998 ותקנות הנגישות לשירות, התשע"ג-2013.</p>
+    <p>צביה כסה מחויבת להנגשת האתר בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות התשנ"ח 1998 ותקנות הנגישות לשירות התשע"ג 2013.</p>
     <h3>רמת נגישות</h3>
     <p>האתר שואף לעמוד בתקן WCAG 2.1 ברמה AA ותקן ישראלי 5568. האתר כולל כפתור נגישות בכותרת המאפשר שינוי גודל טקסט, ניגודיות גבוהה, הדגשת קישורים ועצירת אנימציות.</p>
     <h3>מגבלות ידועות</h3>
@@ -360,7 +360,7 @@ const A11Y_CONTENT = () => (
     <h3>בדיקה אחרונה</h3>
     <p>מאי 2025.</p>
     <h3>פנייה בנושא נגישות</h3>
-    <p>נתקלת בבעיה? נשמח לתקן. {PHONE} — נחזור תוך 5 ימי עסקים.</p>
+    <p>נתקלת בבעיה? נשמח לתקן. {PHONE}, נחזור תוך 5 ימי עסקים.</p>
   </>
 );
 
@@ -418,17 +418,17 @@ export default function TzviaKesseLanding() {
   ];
   const body = [
     { icon:<IconSound/>,      title:"סאונד הילינג",           desc:"רחצה בתדרים מרפאים באמצעות קערות טיבטיות, פעמוני גשם, קולנים ועוד." },
-    { icon:<IconAccessBars/>, title:"אקסס בארס (Access Bars)", desc:"מגע עדין ב-32 נקודות ספציפיות בראש, המנקה חסמים עמוקים מהתת-מודע." },
+    { icon:<IconAccessBars/>, title:"אקסס בארס (Access Bars)", desc:"מגע עדין ב32 נקודות ספציפיות בראש, המנקה חסמים עמוקים מהתת מודע." },
     { icon:<IconReiki/>,      title:"רייקי",                   desc:"איזון מרכזים אנרגטיים במגע עדין, המשחרר חסמים ומקל על כאבים ובעיות פיזיות." },
+    { icon:<IconSound/>,      title:"טיפול בקולנים",           desc:"שיטת ריפוי המשתמשת בתדרים ובוויברציות המסייעים לשחרור כאבים ומתחים פיזיים, הרגעה של מערכת העצבים ותמיכה בתהליכי ריפוי טבעיים." },
   ];
 
   const trust = [
     "מרחב טיפולי חסוי ובטוח לחלוטין",
-    "אחריות אנרגטית מלאה לפני כל מפגש",
     "כל טיפול מותאם אישית לצרכייך",
     "ניקוי אישי לפני כל מפגש",
     "90 דקות של נוכחות מלאה רק בשבילך",
-    "גמישות בתיאום פגישות — גם ערב",
+    "גמישות בתיאום פגישות, גם ערב",
   ];
 
   return (
@@ -450,12 +450,21 @@ export default function TzviaKesseLanding() {
         borderBottom:scrolled?"1px solid rgba(107,39,61,.08)":"none",
         transition:"all .4s ease",
       }}>
-        <div style={{ lineHeight:1.2 }}>
-          <div style={{ fontWeight:900, fontSize:"1.15rem", color:"#6B273D" }}>צביה כסה</div>
-          <div style={{ fontWeight:400, fontSize:".7rem", color:"#9A6070", letterSpacing:".4px" }}>מטפלת הוליסטית</div>
-        </div>
+        <a href="#top" aria-label="צביה כסה, דף הבית" style={{ display:"flex", alignItems:"center", textDecoration:"none" }}>
+          <img
+            src="/images/logo.png"
+            alt="צביה כסה, טיפול גוף, נפש ותודעה"
+            style={{
+              height: scrolled ? "46px" : "58px",
+              maxHeight: scrolled ? "46px" : "58px",
+              width: "auto",
+              transition: "all .35s ease",
+              filter: "saturate(1.05)",
+            }}
+          />
+        </a>
         <div style={{ display:"flex", alignItems:"center", gap:"8px" }}>
-          {/* A11y button sits here — non-intrusive in header */}
+          {/* A11y button sits here, non-intrusive in header */}
           <A11yWidget/>
           <a href={`tel:${PHONE}`} style={{
             display:"flex", alignItems:"center", gap:"7px", color:"#6B273D",
@@ -470,60 +479,97 @@ export default function TzviaKesseLanding() {
       </header>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section style={{
+      <section id="top" style={{
         minHeight:"100vh", display:"flex", alignItems:"center", justifyContent:"center",
-        padding:"96px 24px 56px", position:"relative", overflow:"hidden",
-        background:"linear-gradient(135deg,#FFF5F5 0%,#FDF2F8 45%,#F9EBF4 75%,#F5E8F0 100%)",
+        padding:"96px 24px 64px", position:"relative", overflow:"hidden",
+        background:"linear-gradient(125deg,#FFF1F0 0%,#FCE7EF 30%,#F6D6E3 55%,#EDC5D8 80%,#E8B8CE 100%)",
       }}>
-        <div style={{ position:"absolute", top:"-100px", left:"-100px", width:"480px", height:"480px", borderRadius:"50%", background:"radial-gradient(circle,rgba(107,39,61,.06),transparent 70%)" }}/>
-        <div style={{ position:"absolute", bottom:"-70px", right:"-70px", width:"380px", height:"380px", borderRadius:"50%", background:"radial-gradient(circle,rgba(107,39,61,.04),transparent 70%)" }}/>
+        {/* Decorative blobs */}
+        <div style={{ position:"absolute", top:"-120px", left:"-120px", width:"520px", height:"520px", borderRadius:"50%", background:"radial-gradient(circle,rgba(192,108,140,.22),transparent 70%)", pointerEvents:"none" }}/>
+        <div style={{ position:"absolute", bottom:"-90px", right:"-90px", width:"420px", height:"420px", borderRadius:"50%", background:"radial-gradient(circle,rgba(232,184,206,.45),transparent 70%)", pointerEvents:"none" }}/>
+        <div style={{ position:"absolute", top:"30%", right:"15%", width:"260px", height:"260px", borderRadius:"50%", background:"radial-gradient(circle,rgba(255,210,200,.35),transparent 70%)", pointerEvents:"none" }}/>
 
-        <div style={{ maxWidth:"700px", width:"100%", textAlign:"center", position:"relative" }}>
-          <h1 className="fade-up" style={{ fontSize:"clamp(2rem,5vw,3.3rem)", fontWeight:900, color:"#6B273D", lineHeight:1.28, letterSpacing:"-.5px", marginBottom:"16px" }}>
-            לנשום מחדש: מסע של ריפוי, שקט וחיבור פנימי.
-          </h1>
-          <p className="fade-up" style={{ fontSize:"clamp(1.05rem,2.5vw,1.2rem)", color:"#7A3F55", lineHeight:1.8, marginBottom:"32px" }}>
-            מרחב הוליסטי המשלב עומק רוחני וכלים תודעתיים,<br/>
-            כדי לעזור לך להשתחרר מהעומס ולחזור אל העוצמה שבך.
-          </p>
-          <div className="fade-up" style={{ display:"flex", gap:"12px", justifyContent:"center", flexWrap:"wrap", marginBottom:"22px" }}>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
-              style={{ display:"inline-flex", alignItems:"center", gap:"8px", background:"#25D366", color:"white", padding:"14px 26px", borderRadius:"40px", fontWeight:800, fontSize:"1rem", textDecoration:"none", boxShadow:"0 6px 28px rgba(37,211,102,.36)", transition:"transform .2s" }}
-              onMouseEnter={e=>e.currentTarget.style.transform="translateY(-2px)"}
-              onMouseLeave={e=>e.currentTarget.style.transform="none"}
-            ><WaIcon/> שלחי לי הודעה</a>
-            <a href="#contact"
-              style={{ display:"inline-flex", alignItems:"center", gap:"8px", background:"white", color:"#6B273D", padding:"14px 26px", borderRadius:"40px", fontWeight:700, fontSize:"1rem", textDecoration:"none", border:"1.5px solid rgba(107,39,61,.18)", boxShadow:"0 4px 20px rgba(107,39,61,.09)", transition:"transform .2s" }}
-              onMouseEnter={e=>e.currentTarget.style.transform="translateY(-2px)"}
-              onMouseLeave={e=>e.currentTarget.style.transform="none"}
-            >קבעי פגישה ראשונה</a>
+        <div style={{
+          maxWidth:"820px", width:"100%", textAlign:"center",
+          position:"relative", zIndex:2,
+        }}>
+          <div className="fade-up" style={{ display:"inline-flex", alignItems:"center", gap:"6px", background:"rgba(107,39,61,.1)", border:"1px solid rgba(107,39,61,.2)", borderRadius:"40px", padding:"6px 16px", marginBottom:"18px" }}>
+            <span style={{ fontSize:".85rem", color:"#6B273D", fontWeight:700 }}>מטפלת הוליסטית</span>
           </div>
-          <div className="fade-up" style={{ display:"inline-flex", alignItems:"center", gap:"6px", background:"rgba(107,39,61,.07)", border:"1px solid rgba(107,39,61,.13)", borderRadius:"40px", padding:"6px 16px" }}>
-            <span style={{ fontSize:".85rem", color:"#6B273D", fontWeight:600 }}>מטפלת הוליסטית בכרמיאל ואיזור הגליל</span>
+          <h1 className="fade-up" style={{ fontSize:"clamp(2.1rem,5.2vw,3.6rem)", fontWeight:900, color:"#5C1E33", lineHeight:1.18, letterSpacing:"-.5px", marginBottom:"28px" }}>
+            טיפול הוליסטי שמחזיר אותך <span style={{ color:"#A0496A", display:"inline-block" }}>אל עצמך</span>
+          </h1>
+
+          {/* Tzvia portrait, smaller, centered, below title */}
+          <div className="fade-up" style={{ position:"relative", display:"flex", justifyContent:"center", alignItems:"center", marginBottom:"28px" }}>
+            <div style={{
+              position:"absolute", width:"260px", height:"260px", borderRadius:"50%",
+              background:"radial-gradient(circle, rgba(192,108,140,.35) 0%, rgba(232,184,206,.2) 50%, transparent 75%)",
+              filter:"blur(20px)", pointerEvents:"none",
+            }}/>
+            <div style={{
+              position:"relative", borderRadius:"50% 48% 52% 50% / 50% 50% 48% 52%",
+              overflow:"hidden", width:"220px", height:"260px",
+              boxShadow:"0 20px 50px rgba(107,39,61,.22), inset 0 0 0 5px rgba(255,255,255,.6)",
+              border:"3px solid rgba(255,255,255,.85)",
+            }}>
+              <img
+                src="/images/tzvia.jpg"
+                alt="צביה כסה, מטפלת הוליסטית"
+                style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center top", display:"block" }}
+              />
+              <div style={{
+                position:"absolute", inset:0,
+                background:"linear-gradient(180deg, transparent 55%, rgba(107,39,61,.12) 100%)",
+                pointerEvents:"none",
+              }}/>
+            </div>
+          </div>
+
+          <p className="fade-up" style={{ fontSize:"clamp(1.05rem,2.3vw,1.22rem)", color:"#5A2A3D", lineHeight:1.75, marginBottom:"14px", fontWeight:500 }}>
+            שילוב עוצמתי של רייקי, הילינג, אקסס בארס, סאונד הילינג וקלפים תודעתיים, בקליניקה שלי בכרמיאל.
+          </p>
+          <p className="fade-up" style={{ fontSize:"clamp(.98rem,2vw,1.1rem)", color:"#7A3F55", lineHeight:1.85, marginBottom:"30px" }}>
+            <strong style={{ color:"#6B273D" }}>90 דקות שכל כולן שלך</strong>, שמשחררות עומס, מאזנות את הגוף, ומחזירות לך את השקט שאת מחפשת.
+          </p>
+          <div className="fade-up" style={{ display:"flex", gap:"12px", flexWrap:"wrap", justifyContent:"center" }}>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+              style={{ display:"inline-flex", alignItems:"center", gap:"8px", background:"linear-gradient(135deg,#25D366,#1FB855)", color:"white", padding:"15px 28px", borderRadius:"40px", fontWeight:800, fontSize:"1rem", textDecoration:"none", boxShadow:"0 8px 32px rgba(37,211,102,.4)", transition:"transform .2s" }}
+              onMouseEnter={e=>e.currentTarget.style.transform="translateY(-2px)"}
+              onMouseLeave={e=>e.currentTarget.style.transform="none"}
+            ><WaIcon/> בואי נתחיל, שלחי הודעה</a>
+            <a href="#contact"
+              style={{ display:"inline-flex", alignItems:"center", gap:"8px", background:"white", color:"#6B273D", padding:"15px 28px", borderRadius:"40px", fontWeight:700, fontSize:"1rem", textDecoration:"none", border:"1.5px solid rgba(107,39,61,.2)", boxShadow:"0 4px 22px rgba(107,39,61,.12)", transition:"transform .2s" }}
+              onMouseEnter={e=>e.currentTarget.style.transform="translateY(-2px)"}
+              onMouseLeave={e=>e.currentTarget.style.transform="none"}
+            >לתיאום שיחת היכרות</a>
           </div>
         </div>
       </section>
 
       {/* ── EMPATHY ──────────────────────────────────────────────────────── */}
-      <section style={{ padding:"80px 24px", background:"linear-gradient(180deg,#FDF2F8,#FFF5F5)" }}>
+      <section style={{ padding:"90px 24px", background:"linear-gradient(180deg,#FCE7EF 0%,#FFF1F0 60%,#FFF5F5 100%)" }}>
         <div style={{ maxWidth:"960px", margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:"52px", alignItems:"start" }} className="two-col">
           <div className="slide-r">
-            <h2 style={{ fontSize:"clamp(1.6rem,3vw,2.2rem)", fontWeight:900, color:"#6B273D", lineHeight:1.3, marginBottom:"20px" }}>
-              הקשבה עמוקה לרעשי הרקע
+            <div style={{ display:"inline-block", background:"linear-gradient(135deg,rgba(160,73,106,.15),rgba(232,184,206,.25))", padding:"4px 14px", borderRadius:"40px", marginBottom:"14px" }}>
+              <span style={{ fontSize:".82rem", color:"#6B273D", fontWeight:700 }}>הטיפול שיעשה לך טוב</span>
+            </div>
+            <h2 style={{ fontSize:"clamp(1.7rem,3.2vw,2.4rem)", fontWeight:900, color:"#5C1E33", lineHeight:1.25, marginBottom:"20px" }}>
+              טיפול עוצמתי שמשחרר את מה שתקוע
             </h2>
-            <p style={{ color:"#4A4A4A", fontSize:"1rem", lineHeight:1.88, marginBottom:"14px" }}>
-              לפעמים, מרוץ החיים או שינויים הורמונליים משאירים אותנו עם תחושה של נתק. חוסר שינה, עומס, תסכול, עייפות ששואבת את האנרגיה, פחדים, כעסים, חרדות, או תחושה של תקיעות בהגשמה ובגוף הפיזי.
+            <p style={{ color:"#4A4A4A", fontSize:"1.02rem", lineHeight:1.85, marginBottom:"14px" }}>
+              הטיפול שלי הוא תהליך עמוק ומדויק שמשלב 7 מתודות הוליסטיות מובילות, <strong style={{ color:"#6B273D" }}>רייקי, הילינג חיבור לנשמה, אקסס בארס, EFT, סאונד הילינג, טיפול בקולנים וקלפים תודעתיים</strong>. כל מפגש נבנה אישית לפי מה שאת צריכה באותו רגע.
             </p>
-            <p style={{ color:"#4A4A4A", fontSize:"1rem", lineHeight:1.88, marginBottom:"14px" }}>
-              את לא חייבת להמשיך לשאת את הכל לבד. באמצעות תהליך של אבחון והקשבה עמוקה לגוף ולנפש, ניצור יחד חיבור מחדש לקול הפנימי שלך. זהו תהליך שיסייע לך להפחית את התסמינים הפיזיים והרגשיים, ולחזור לשגרה רגועה, מאוזנת ושמחה.
+            <p style={{ color:"#4A4A4A", fontSize:"1.02rem", lineHeight:1.85, marginBottom:"14px" }}>
+              אנחנו עובדות יחד על שחרור חסמים אנרגטיים שיושבים בגוף ובנפש כבר שנים, כעסים שלא יצאו, פחדים שמעכבים, עייפות שלא עוברת, ואירועים מהעבר שעדיין משפיעים.
             </p>
-            <p style={{ color:"#6B273D", fontSize:"1rem", lineHeight:1.88, fontWeight:700 }}>
-              אם את מרגישה שהגיע הזמן למצוא את השקט שלך מחדש, אני כאן בשבילך.
+            <p style={{ color:"#A0496A", fontSize:"1.05rem", lineHeight:1.8, fontWeight:700, padding:"14px 18px", background:"rgba(255,255,255,.55)", borderRight:"3px solid #A0496A", borderRadius:"8px" }}>
+              שקט פנימי, אנרגיה מחודשת ובהירות, הם רק חלק מהתוצאות שהלקוחות שלי מדווחות עליהן.
             </p>
           </div>
           <div className="slide-l">
             <div className="glass" style={{ padding:"30px", borderRadius:"22px", boxShadow:"0 12px 48px rgba(107,39,61,.1)" }}>
-              <h3 style={{ fontSize:"1.2rem", fontWeight:800, color:"#6B273D", marginBottom:"4px" }}>השאירי פרטים — אחזור אלייך</h3>
+              <h3 style={{ fontSize:"1.2rem", fontWeight:800, color:"#6B273D", marginBottom:"4px" }}>השאירי פרטים, אחזור אלייך</h3>
               <p style={{ color:"#7A3F55", fontSize:".86rem", marginBottom:"20px", lineHeight:1.6 }}>שיחה קצרה ללא התחייבות, כדי להבין מה את צריכה ואיך אני יכולה לעזור.</p>
               <InlineForm/>
             </div>
@@ -532,17 +578,20 @@ export default function TzviaKesseLanding() {
       </section>
 
       {/* ── TREATMENTS ───────────────────────────────────────────────────── */}
-      <section style={{ padding:"80px 24px", background:"#FFF5F5" }}>
+      <section style={{ padding:"90px 24px", background:"linear-gradient(180deg,#FFF5F5 0%,#FDF2F8 50%,#FCE7EF 100%)" }}>
         <div style={{ maxWidth:"1060px", margin:"0 auto" }}>
-          <div className="fade-up" style={{ textAlign:"center", marginBottom:"28px" }}>
-            <h2 style={{ fontSize:"clamp(1.7rem,3.5vw,2.6rem)", fontWeight:900, color:"#6B273D", lineHeight:1.25, marginBottom:"12px" }}>
-              הזמנה למסע ריפוי: מה קורה בטיפול?
+          <div className="fade-up" style={{ textAlign:"center", marginBottom:"34px" }}>
+            <div style={{ display:"inline-block", background:"linear-gradient(135deg,rgba(160,73,106,.15),rgba(232,184,206,.25))", padding:"4px 14px", borderRadius:"40px", marginBottom:"14px" }}>
+              <span style={{ fontSize:".82rem", color:"#6B273D", fontWeight:700 }}>7 מתודות. טיפול אחד מותאם לך.</span>
+            </div>
+            <h2 style={{ fontSize:"clamp(1.8rem,3.6vw,2.7rem)", fontWeight:900, color:"#5C1E33", lineHeight:1.22, marginBottom:"14px" }}>
+              הכלים המקצועיים שעובדים, בכל שכבה
             </h2>
-            <p style={{ color:"#5A5A5A", fontSize:"1rem", lineHeight:1.8, maxWidth:"640px", margin:"0 auto 6px" }}>
-              בקליניקה השקטה שלי בכרמיאל (או מהנוחות של ביתך בזום), יצרתי עבורך מסע בן 6 מפגשים. זהו זמן שהוא רק שלך – <strong>90 דקות של נוכחות מלאה.</strong> המטרה שלנו היא אחת: לאפשר לגוף להירגע, לנפש לנשום ולתודעה להתרחב.
+            <p style={{ color:"#5A5A5A", fontSize:"1.04rem", lineHeight:1.85, maxWidth:"680px", margin:"0 auto 8px" }}>
+              בקליניקה שלי בכרמיאל, יצרתי לך מסע בן 6 מפגשים שבו אני משלבת בין הכלים החזקים ביותר בעולם הטיפול ההוליסטי. <strong style={{ color:"#6B273D" }}>90 דקות של נוכחות מלאה ועבודה מדויקת, שמביאות תוצאות אמיתיות.</strong>
             </p>
-            <p style={{ color:"#7A3F55", fontSize:".95rem", marginTop:"8px" }}>
-              כדי לתת לך את המענה המדויק ביותר, אני משלבת עבודה בשלושה רבדים:
+            <p style={{ color:"#7A3F55", fontSize:".96rem", marginTop:"10px", fontWeight:600 }}>
+              כל טיפול נבנה אישית, בשלוש שכבות שעובדות יחד:
             </p>
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"28px" }} className="two-col">
@@ -558,8 +607,88 @@ export default function TzviaKesseLanding() {
         </div>
       </section>
 
+      {/* ── CLINIC GALLERY ───────────────────────────────────────────────── */}
+      <section style={{ padding:"90px 24px", background:"linear-gradient(180deg,#FCE7EF 0%,#F6D6E3 50%,#FCE7EF 100%)", position:"relative", overflow:"hidden" }}>
+        <div style={{ position:"absolute", top:"10%", left:"-100px", width:"320px", height:"320px", borderRadius:"50%", background:"radial-gradient(circle,rgba(192,108,140,.18),transparent 70%)", pointerEvents:"none" }}/>
+        <div style={{ position:"absolute", bottom:"-50px", right:"-80px", width:"280px", height:"280px", borderRadius:"50%", background:"radial-gradient(circle,rgba(255,210,200,.35),transparent 70%)", pointerEvents:"none" }}/>
+
+        <div style={{ maxWidth:"1100px", margin:"0 auto", position:"relative" }}>
+          <div className="fade-up" style={{ textAlign:"center", marginBottom:"40px" }}>
+            <div style={{ display:"inline-block", background:"linear-gradient(135deg,rgba(160,73,106,.15),rgba(232,184,206,.25))", padding:"4px 14px", borderRadius:"40px", marginBottom:"14px" }}>
+              <span style={{ fontSize:".82rem", color:"#6B273D", fontWeight:700 }}>הקליניקה שלי בכרמיאל</span>
+            </div>
+            <h2 style={{ fontSize:"clamp(1.8rem,3.5vw,2.6rem)", fontWeight:900, color:"#5C1E33", lineHeight:1.22, marginBottom:"14px" }}>
+              המרחב שמחכה לך
+            </h2>
+            <p style={{ color:"#5A5A5A", fontSize:"1.04rem", lineHeight:1.8, maxWidth:"640px", margin:"0 auto" }}>
+              עיצבתי כל פינה בקליניקה כדי שתוכלי להירגע מהרגע שאת נכנסת. אור רך, כלי טיפול אותנטיים, אווירה חמה, מרחב שמזמין אותך לנשום עמוק ולהתחיל את התהליך.
+            </p>
+          </div>
+
+          <div className="clinic-gallery" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"28px" }}>
+            <div className="slide-r" style={{ position:"relative" }}>
+              <div style={{
+                borderRadius:"24px", overflow:"hidden", aspectRatio:"3/4",
+                boxShadow:"0 20px 60px rgba(107,39,61,.22)", border:"4px solid white",
+                transition:"transform .4s ease", cursor:"pointer",
+              }}
+                onMouseEnter={e=>e.currentTarget.style.transform="translateY(-4px) scale(1.01)"}
+                onMouseLeave={e=>e.currentTarget.style.transform="none"}
+              >
+                <img src="/images/clinic-room.jpg" alt="חדר הטיפולים בקליניקה של צביה כסה" style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }}/>
+              </div>
+              <div style={{
+                position:"absolute", bottom:"18px", right:"18px",
+                background:"rgba(255,255,255,.95)", padding:"10px 16px", borderRadius:"30px",
+                boxShadow:"0 6px 22px rgba(107,39,61,.18)",
+              }}>
+                <span style={{ fontWeight:800, color:"#6B273D", fontSize:".88rem" }}>🕊️ חדר הטיפולים</span>
+              </div>
+            </div>
+
+            <div className="slide-l" style={{ position:"relative" }}>
+              <div style={{
+                borderRadius:"24px", overflow:"hidden", aspectRatio:"3/4",
+                boxShadow:"0 20px 60px rgba(107,39,61,.22)", border:"4px solid white",
+                transition:"transform .4s ease", cursor:"pointer",
+              }}
+                onMouseEnter={e=>e.currentTarget.style.transform="translateY(-4px) scale(1.01)"}
+                onMouseLeave={e=>e.currentTarget.style.transform="none"}
+              >
+                <img src="/images/clinic-shelf.jpg" alt="כלי הטיפול: קערות טיבטיות, קלפים תודעתיים ואבני קריסטל" style={{ width:"100%", height:"100%", objectFit:"cover", display:"block" }}/>
+              </div>
+              <div style={{
+                position:"absolute", bottom:"18px", right:"18px",
+                background:"rgba(255,255,255,.95)", padding:"10px 16px", borderRadius:"30px",
+                boxShadow:"0 6px 22px rgba(107,39,61,.18)",
+              }}>
+                <span style={{ fontWeight:800, color:"#6B273D", fontSize:".88rem" }}>🌸 כלי הטיפול</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="fade-up" style={{ textAlign:"center", marginTop:"36px" }}>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" style={{
+              display:"inline-flex", alignItems:"center", gap:"8px",
+              background:"linear-gradient(135deg,#6B273D,#A0496A)", color:"white",
+              padding:"14px 30px", borderRadius:"40px", fontWeight:800, fontSize:".98rem",
+              textDecoration:"none", boxShadow:"0 8px 28px rgba(107,39,61,.3)",
+            }}>
+              <WaIcon/> בואי לראות את הקליניקה
+            </a>
+            <p style={{ marginTop:"10px", color:"#9A6070", fontSize:".88rem" }}>נשר 143, כרמיאל</p>
+          </div>
+        </div>
+
+        <style>{`
+          @media(max-width:768px){
+            .clinic-gallery { grid-template-columns:1fr !important; }
+          }
+        `}</style>
+      </section>
+
       {/* ── BONUS ────────────────────────────────────────────────────────── */}
-      <section style={{ padding:"60px 24px", background:"linear-gradient(180deg,#FDF2F8,#FFF5F5)" }}>
+      <section style={{ padding:"60px 24px", background:"linear-gradient(180deg,#FCE7EF,#F6D6E3,#FCE7EF)" }}>
         <div style={{ maxWidth:"760px", margin:"0 auto" }}>
           <div className="scale-up" style={{
             borderRadius:"26px", padding:"44px 36px",
@@ -576,7 +705,7 @@ export default function TzviaKesseLanding() {
               </h2>
               <p style={{ color:"rgba(255,245,245,.85)", fontSize:"1.02rem", lineHeight:1.8, marginBottom:"26px", maxWidth:"500px", margin:"0 auto 26px" }}>
                 כדי לתמוך בתהליך שלך, תקבלי ממני בונוס מיוחד באהבה:<br/>
-                <strong style={{ color:"white" }}>פריסת קלפי "הפרח שבאך" בשילוב טיפול EFT ממוקד</strong> – להענקת בהירות מיידית, פתיחת חסימות ודיוק פנימי להמשך הדרך.
+                <strong style={{ color:"white" }}>פריסת קלפי "הפרח שבאך" בשילוב טיפול EFT ממוקד</strong>, להענקת בהירות מיידית, פתיחת חסימות ודיוק פנימי להמשך הדרך.
               </p>
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" style={{
                 display:"inline-flex", alignItems:"center", gap:"8px",
@@ -593,14 +722,17 @@ export default function TzviaKesseLanding() {
       </section>
 
       {/* ── TRUST ────────────────────────────────────────────────────────── */}
-      <section style={{ padding:"80px 24px", background:"#FFF5F5" }}>
+      <section style={{ padding:"90px 24px", background:"linear-gradient(180deg,#FCE7EF 0%,#FFF5F5 40%,#FDF2F8 100%)" }}>
         <div style={{ maxWidth:"860px", margin:"0 auto" }}>
-          <div className="fade-up" style={{ textAlign:"center", marginBottom:"36px" }}>
-            <h2 style={{ fontSize:"clamp(1.7rem,3.5vw,2.4rem)", fontWeight:900, color:"#6B273D", lineHeight:1.25, marginBottom:"12px" }}>
-              התחייבות למרחב נקי
+          <div className="fade-up" style={{ textAlign:"center", marginBottom:"38px" }}>
+            <div style={{ display:"inline-block", background:"linear-gradient(135deg,rgba(160,73,106,.15),rgba(232,184,206,.25))", padding:"4px 14px", borderRadius:"40px", marginBottom:"14px" }}>
+              <span style={{ fontSize:".82rem", color:"#6B273D", fontWeight:700 }}>מה את מקבלת בכל מפגש</span>
+            </div>
+            <h2 style={{ fontSize:"clamp(1.7rem,3.5vw,2.4rem)", fontWeight:900, color:"#5C1E33", lineHeight:1.22, marginBottom:"14px" }}>
+              ההתחייבות שלי אלייך
             </h2>
-            <p style={{ color:"#5A5A5A", fontSize:"1rem", lineHeight:1.85, maxWidth:"600px", margin:"0 auto" }}>
-              אני מאמינה שכדי שתוכלי להתנקות, גם המרחב סביבך חייב להיות טהור. לכן, אני מקפידה על אחריות אנרגטית מלאה וניקוי אישי לפני כל מפגש, כדי להבטיח שאת מקבלת את תשומת הלב והאנרגיה המדויקת לך.
+            <p style={{ color:"#5A5A5A", fontSize:"1.02rem", lineHeight:1.85, maxWidth:"640px", margin:"0 auto" }}>
+              טיפול אמיתי מתחיל מאמון. <strong style={{ color:"#6B273D" }}>אני מבטיחה לך מרחב טהור, מקצועי ובטוח לחלוטין</strong>, כדי שתוכלי להתמסר לתהליך עם כל הלב ולקבל את התוצאה שאת מחפשת.
             </p>
           </div>
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"10px" }} className="two-col">
@@ -615,16 +747,17 @@ export default function TzviaKesseLanding() {
       </section>
 
       {/* ── FOOTER CTA ───────────────────────────────────────────────────── */}
-      <section id="contact" style={{ padding:"96px 24px", background:"linear-gradient(135deg,#6B273D,#7A3046,#5C1E33)", position:"relative", overflow:"hidden" }}>
-        <div style={{ position:"absolute", top:"-80px", left:"50%", transform:"translateX(-50%)", width:"560px", height:"560px", borderRadius:"50%", background:"radial-gradient(circle,rgba(255,255,255,.04),transparent 70%)" }}/>
+      <section id="contact" style={{ padding:"100px 24px", background:"linear-gradient(135deg,#6B273D 0%,#8B3A55 40%,#5C1E33 100%)", position:"relative", overflow:"hidden" }}>
+        <div style={{ position:"absolute", top:"-80px", left:"50%", transform:"translateX(-50%)", width:"600px", height:"600px", borderRadius:"50%", background:"radial-gradient(circle,rgba(255,210,200,.1),transparent 70%)", pointerEvents:"none" }}/>
+        <div style={{ position:"absolute", bottom:"-100px", right:"-50px", width:"320px", height:"320px", borderRadius:"50%", background:"radial-gradient(circle,rgba(232,184,206,.15),transparent 70%)", pointerEvents:"none" }}/>
         <div style={{ maxWidth:"580px", margin:"0 auto", position:"relative", textAlign:"center" }}>
           <div className="fade-up">
-            <div style={{ fontSize:"2.4rem", marginBottom:"12px" }}>🌸</div>
-            <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.6rem)", fontWeight:900, color:"white", lineHeight:1.25, marginBottom:"12px" }}>
-              המסע שלך מתחיל בנשימה אחת
+            <div style={{ fontSize:"2.6rem", marginBottom:"14px" }}>🌸</div>
+            <h2 style={{ fontSize:"clamp(1.9rem,4.2vw,2.7rem)", fontWeight:900, color:"white", lineHeight:1.2, marginBottom:"14px" }}>
+              בואי נתחיל את הטיפול הראשון שלך
             </h2>
-            <p style={{ color:"rgba(255,245,245,.78)", fontSize:"1rem", lineHeight:1.8, marginBottom:"34px" }}>
-              אם את מרגישה שהגיע הזמן להעניק לעצמך את השקט הזה, אני מזמינה אותך להשאיר פרטים ונצא לדרך בשיחת הכרות קצרה.
+            <p style={{ color:"rgba(255,245,245,.85)", fontSize:"1.05rem", lineHeight:1.8, marginBottom:"34px" }}>
+              השאירי פרטים, אני אחזור אלייך בשיחת היכרות קצרה, נבין מה את צריכה ונבנה לך תהליך מותאם אישית. <strong style={{ color:"#FCE7EF" }}>אין התחייבות, רק שיחה אחת שתעשה לך טוב.</strong>
             </p>
           </div>
           <div className="fade-up"><FooterForm/></div>
@@ -643,7 +776,7 @@ export default function TzviaKesseLanding() {
       {/* ── SITE FOOTER ──────────────────────────────────────────────────── */}
       <footer style={{ background:"#3D1020", padding:"26px 24px", textAlign:"center" }}>
         <p style={{ color:"rgba(255,245,245,.4)", fontSize:".78rem", marginBottom:"10px" }}>
-          © 2025 צביה כסה — מטפלת הוליסטית | כרמיאל ואיזור הגליל | כל הזכויות שמורות
+          © 2026 צביה כסה, מטפלת הוליסטית | כל הזכויות שמורות
         </p>
         <div style={{ display:"flex", gap:"16px", justifyContent:"center", flexWrap:"wrap" }}>
           {[["מדיניות פרטיות","privacy"],["תנאי שימוש","terms"],["הצהרת נגישות","a11y"]].map(([lbl,k])=>(
